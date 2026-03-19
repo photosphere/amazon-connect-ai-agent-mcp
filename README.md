@@ -7,6 +7,16 @@
 ### Get instance-id
 <img width="1679" height="537" alt="Image" src="https://github.com/user-attachments/assets/2a9910d3-9d6e-4aec-944c-63764c56dadd" />
 
+### Clone the repo
+```bash
+git clone https://github.com/photosphere/amazon-connect-ai-agent-mcp.git
+```
+
+### Enter the repo
+```bash
+cd amazon-connect-ai-agent-mcp
+```
+
 ### Deploy ai-agent and flow
 python deploy.py \
   --assistant-id a5cc0a4b-6309-4b1d-8d10-fb28ea95d9d0 \
