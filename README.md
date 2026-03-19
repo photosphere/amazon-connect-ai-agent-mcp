@@ -18,7 +18,9 @@ cd amazon-connect-ai-agent-mcp
 ```
 
 ### Deploy ai-agent and flow
+```bash
 python deploy.py \
   --assistant-id a5cc0a4b-6309-4b1d-8d10-fb28ea95d9d0 \
   --instance-id 7af7e210-d7ac-4caf-a512-e14cf4b23893 \
   --region ap-northeast-1
+```
