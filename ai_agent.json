@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-03-19T00:59:40.788469",
+  "data": {
+    "ResponseMetadata": {
+      "RequestId": "3b8dd5d7-e983-42b6-82c5-c8c0e07d982c",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "date": "Wed, 18 Mar 2026 16:59:40 GMT",
+        "content-type": "application/json",
+        "content-length": "4020",
+        "connection": "keep-alive",
+        "x-amzn-requestid": "3b8dd5d7-e983-42b6-82c5-c8c0e07d982c",
+        "x-amzn-remapped-x-amzn-requestid": "bb248d72-7e35-4d88-a08c-055d7983516c",
+        "x-amzn-remapped-content-length": "3047",
+        "x-amzn-remapped-connection": "keep-alive",
+        "x-amz-apigw-id": "abb_eGhqPHcEC2w=",
+        "x-amzn-trace-id": "Root=1-69bad9fc-400b0beb2448b9b423146226",
+        "x-amzn-remapped-date": "Wed, 18 Mar 2026 16:59:40 GMT"
+      },
+      "RetryAttempts": 0
+    },
+    "aiAgent": {
+      "assistantId": "14fe4db3-cca0-4c91-b484-ee7dc6a0e9aa",
+      "assistantArn": "arn:aws:wisdom:us-west-2:991727053196:assistant/14fe4db3-cca0-4c91-b484-ee7dc6a0e9aa",
+      "aiAgentId": "0add7cfd-394d-4b97-ae93-37feb66a26a6",
+      "aiAgentArn": "arn:aws:wisdom:us-west-2:991727053196:ai-agent/14fe4db3-cca0-4c91-b484-ee7dc6a0e9aa/0add7cfd-394d-4b97-ae93-37feb66a26a6:$LATEST",
+      "name": "SelfServiceOrchestrator_Query",
+      "type": "ORCHESTRATION",
+      "configuration": {
+        "orchestrationAIAgentConfiguration": {
+          "orchestrationAIPromptId": "156bf3e3-4f10-4274-bc51-14739238eb23:1",
+          "toolConfigurations": [
+            {
+              "toolName": "Complete",
+              "toolType": "RETURN_TO_CONTROL",
+              "description": "Close conversation when customer has no more questions",
+              "instruction": {
+                "instruction": "Mark the conversation as complete ONLY after confirming the customer has no additional questions or needs. Always ask if there's anything else you can help with before using this tool."
+              },
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "description": "Reason of completion"
+                  }
+                },
+                "required": [
+                  "reason"
+                ]
+              },
+              "userInteractionConfiguration": {
+                "isUserConfirmationRequired": false
+              }
+            },
+            {
+              "toolName": "Escalate",
+              "toolType": "RETURN_TO_CONTROL",
+              "description": "Escalate to human agent when customer issue can not solve",
+              "instruction": {
+                "instruction": "Escalate the conversation to a human agent when you cannot provide adequate assistance, when other tools fail or return errors, or when the customer's request requires human intervention.",
+                "examples": [
+                  "Good example - Tool errors:\n<message>\nI'm having trouble accessing the information you need right now. Would you like me to connect you with a human agent who can help you further?\n</message>",
+                  "Good example - Frustrated customer:\n<message>\nI understand your frustration with this issue. Would you like me to connect you with a human agent who can help you further?\n</message>",
+                  "Bad example (avoid this):\n<message>\nI'm unable to help with this. Let me escalate you to a human agent.\n</message>"
+                ]
+              },
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "description": "Reason of escalation"
+                  }
+                },
+                "required": [
+                  "reason"
+                ]
+              },
+              "userInteractionConfiguration": {
+                "isUserConfirmationRequired": false
+              }
+            },
+            {
+              "toolName": "Query",
+              "toolType": "RETURN_TO_CONTROL",
+              "toolId": "Query",
+              "instruction": {
+                "instruction": "Use this tool when the customer query order status",
+                "examples": []
+              },
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "orderId": {
+                    "type": "string",
+                    "description": "Identifier of order customer query"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "description": "phone number of customer who query the order"
+                  }
+                },
+                "required": [
+                  "orderId",
+                  "phoneNumber"
+                ]
+              },
+              "userInteractionConfiguration": {
+                "isUserConfirmationRequired": false
+              }
+            }
+          ],
+          "connectInstanceArn": "arn:aws:connect:us-west-2:991727053196:instance/2ff5674e-de94-4714-bc6d-d7f2cebeee9d",
+          "locale": "en_US"
+        }
+      },
+      "modifiedTime": "2026-03-18T00:48:28+08:00",
+      "visibilityStatus": "PUBLISHED",
+      "tags": {},
+      "origin": "CUSTOMER",
+      "status": "ACTIVE"
+    }
+  }
+}
