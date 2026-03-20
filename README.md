@@ -24,3 +24,7 @@ python deploy.py \
   --instance-id 7af7e210-d7ac-4caf-a512-e14cf4b23893 \
   --region ap-northeast-1
 ```
+### Amazon Connect configure and demo
+```bash
+https://d2ssooirmg4ol6.cloudfront.net/mcp_deploy_demo.mov
+```
